@@ -10,7 +10,7 @@ func DBConnetion() (*sql.DB, error) {
 	dbServer := "mysql"
 	dbUser := "root"
 	dbPass := ""
-	dbName := "go-crud"
+	dbName := "go"
 	db, err := sql.Open(dbServer, dbUser+":"+dbPass+"@/"+dbName)
 	return db, err
 }

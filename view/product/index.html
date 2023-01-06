@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <title>GoLang CRUD</title>
+    <style>
+      .container{
+          max-width: 800px;
+      }
+  </style>
   </head>
   <body>
     <div class="container mt-5">
@@ -22,9 +27,26 @@
                     <th>ProductName</th>
                     <th>ProductNumber</th>
                     <th>ProductPrice</th>
+                    <th>---------</th>
                 </tr>
             </thead>
-
+            <tbody>
+              {{ range .product }}
+                  <tr>
+                      <td>{{ .ProductID }}</td>
+                      <td>{{ .ProductName }}</td>
+                      <td>{{ .ProductNumber }}</td>
+                      <td>{{ .ProductPrice }}</td>
+                 
+                    
+                      <td>
+                          <a href="/Product/Edit?id={{.ProductID}}" class="btn btn-sm btn-warning">Edit</a>
+                          <a href="/Product/Delete?id={{.ProductID}}"  class="btn btn-sm btn-danger">Delete</a>
+                      </td>
+                      <td>-----------</td>
+                  </tr>
+              {{ end }}
+          </tbody>
         </table>
     </div>
 

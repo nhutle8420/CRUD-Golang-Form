@@ -2,6 +2,8 @@ package main
 
 import (
 	"Go-crud/controllers/productcontroller"
+	"fmt"
+	"log"
 	"net/http"
 )
 
@@ -13,7 +15,7 @@ func main() {
 	http.HandleFunc("/Product/Add", productcontroller.Addx)
 	http.HandleFunc("/Product/Edit", productcontroller.Editx)
 	http.HandleFunc("/Product/Delete", productcontroller.Deletex)
-
-	http.ListenAndServe(":8088", nil)
+	fmt.Println("ListenAndServe: 8080")
+	log.Fatal(http.ListenAndServe(":8088", nil))
 
 }

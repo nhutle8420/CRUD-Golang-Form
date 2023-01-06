@@ -1,8 +1,8 @@
 package entities
 
 type Product struct {
-	ProductID     int
-	ProductName   string
-	ProductNumber string
-	ProductPrice  string
+	ProductID     int64
+	ProductName   string `validate:"required"  label:"ProductName"`
+	ProductNumber string `validate:"required"  label:"ProductNumber"`
+	ProductPrice  string `validate:"required" label:"ProductPrice"`
 }
